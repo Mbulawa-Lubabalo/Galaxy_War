@@ -40,7 +40,7 @@ public class World {
         frame.setResizable(false);
 
         // Add a simple drawing panel
-//        frame.add(new WorldPanel());
+        frame.add(new WorldPanel());
 
         frame.setVisible(true);
     }
