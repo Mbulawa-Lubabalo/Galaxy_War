@@ -1,5 +1,7 @@
 package game.code.serverSide.server;
 
+import game.code.serverSide.world.World;
+
 import java.io.*;
 import java.net.*;
 
@@ -26,6 +28,9 @@ public class SimpleServer implements Runnable {
             while ((messageFromClient = in.readLine()) != null) {
                 System.out.println("Message \"" + messageFromClient + "\" from " + clientMachine);
                 out.println("Thanks for this message: " + messageFromClient);
+
+                World world = World.getInstance();
+                System.out.println(world.dumpState());
             }
         } catch (IOException ex) {
             System.out.println("Shutting down single client server");
