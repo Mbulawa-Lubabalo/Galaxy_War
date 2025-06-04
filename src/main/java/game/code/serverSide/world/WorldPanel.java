@@ -11,8 +11,15 @@ public class WorldPanel extends JPanel {
     private static final int width = colCount * tileSize;
     private static final int height = rowCount * tileSize;
 
+//    Images
+    private Image fighterImage;
+
     WorldPanel(){
         setPreferredSize(new Dimension(width, height));
         setBackground(Color.DARK_GRAY);
+
+//        Load images
+//        fighterImage = new ImageIcon(getClass().getResource("./images/galaxyWarF1.png")).getImage();
+
     }
 }
