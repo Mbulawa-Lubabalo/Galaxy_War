@@ -1,5 +1,7 @@
 package game.code.serverSide.world;
 
+import game.code.clientSide.client.airCraft.FighterJet;
+
 import javax.swing.*;
 import javax.swing.JFrame;
 import java.io.FileNotFoundException;
@@ -29,6 +31,10 @@ public class World {
             instance = new World();
         }
         return instance;
+    }
+
+    public void addFighterJet(FighterJet fighterJet) {
+        fighterJet.add(fighterJet);
     }
 
     // Window Frame

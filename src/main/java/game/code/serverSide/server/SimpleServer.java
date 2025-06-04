@@ -1,5 +1,6 @@
 package game.code.serverSide.server;
 
+import game.code.clientSide.client.airCraft.FighterJet;
 import game.code.serverSide.world.World;
 
 import java.io.*;
@@ -11,6 +12,12 @@ public class SimpleServer implements Runnable {
     private final BufferedReader in;
     private final PrintStream out;
     private final String clientMachine;
+
+//    -------------------------------------------------------
+
+    FighterJet fighterJet;
+
+//    -------------------------------------------------------
 
     public SimpleServer(Socket socket) throws IOException {
         clientMachine = socket.getInetAddress().getHostName();
@@ -29,8 +36,15 @@ public class SimpleServer implements Runnable {
                 System.out.println("Message \"" + messageFromClient + "\" from " + clientMachine);
                 out.println("Thanks for this message: " + messageFromClient);
 
+//                -----------------------------------------------------
+
+                fighterJet.getPosition();
+
                 World world = World.getInstance();
+
                 System.out.println(world.dumpState());
+
+//                ------------------------------------------------------
             }
         } catch (IOException ex) {
             System.out.println("Shutting down single client server");
